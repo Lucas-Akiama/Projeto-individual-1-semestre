@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.header{
+    background-color: rgba(37, 37, 255, 0.822);
+    border-bottom: 4px solid rgba(255, 55, 55, 0.877);
+}
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+  }
+
+.logo_titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.logo_nba{
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+
+.titulo_header{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.header .container{
+    justify-content: space-between;
+}
+
+.agora {
+    font-weight: 800;
+  }
+
+.navegacao_header{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+}
+
+.navegacao_header a{
+    text-decoration: none;
+    color: white;
+}
