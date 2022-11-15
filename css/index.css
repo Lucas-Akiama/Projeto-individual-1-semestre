@@ -1,0 +1,231 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/*Header*/
+.header{
+    background-color: rgba(37, 37, 255, 0.822);
+    border-bottom: 4px solid rgba(255, 55, 55, 0.877);
+}
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+  }
+
+.logo_titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.logo_nba{
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+}
+
+.titulo_header{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+.header .container{
+    justify-content: space-between;
+}
+
+.agora {
+    font-weight: 800;
+  }
+
+.navegacao_header{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+}
+
+.navegacao_header a{
+    text-decoration: none;
+    color: white;
+}
+
+/*Main*/
+/*historia*/
+.banner1{
+    background-image: url("../assets/nbaCourt.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 70vh;
+}
+
+.titulo_banner{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.imagem_lateral{
+    display: flex;
+    align-items: center;
+}
+
+.first_imagem_lateral{
+    width: 20vw;
+}
+
+.historia{
+    width: 70vw;
+    height: 57vh;
+    background-color: rgba(255, 255, 255, 0.719);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 15px;
+    font-weight: 800;
+    font-size: large;
+}
+
+/*funcionamento*/
+.funcionamento{
+    display: flex;
+}
+
+.divisoes{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.texto_funcionamento{
+    font-size: large;
+    font-weight: 550;
+    margin-left: 20px;
+}
+
+/*temporada*/
+.banner2{
+    background-image: url("../assets/lebron_winnig.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding: 50px;
+}
+
+.banner2 .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.temporada{
+    width: 65vw;
+    background-color: rgba(255, 255, 255, 0.534);
+    font-weight: 800;
+    font-size: large;
+    margin: 50px;
+    padding: 20px;
+}
+
+.img_lebron_winnig{
+    max-height: 50vh;
+}
+
+/*playoofs*/
+.banner3{
+    background-image: url("../assets/curry_champs.jpg");
+    background-size: cover;
+}
+.banner3 .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.play_off{
+    width: 70vw;
+    background-color: rgba(255, 255, 255, 0.514);
+    font-weight: 800;
+    font-size: large;
+    margin: 50px;
+    padding: 20px;
+}
+.img_curry_winnig{
+    max-height: 50vh;
+    margin: 20px;
+}
+
+/*franquias*/
+.franquias{
+    margin-top: 50px;
+    margin-right: 15px;
+    font-size: large;
+    font-weight: 550;
+    margin-left: 20px;
+}
+
+.imagem_franquias{
+    margin-top: 20px;
+    max-height: 40vh;
+}
+
+/*Draft*/
+
+.draft{
+    margin-top: 50px;
+    margin-right: 15px;
+    font-size: large;
+    font-weight: 550;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagem_draft{
+    margin-top: 20px;
+    max-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem_draft_2020{
+    max-height: 40vh;
+}
+.imagens_draft{
+    display: flex;
+    flex-direction: column;
+}
+
+/*diferenca_nba*/
+.regras_diferentes{
+    width: 80vw;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.lista_regras{
+    font-size: large;
+    font-weight: 600;
+}
+
+.diferenca_nba{
+    margin-top: 50px;
+}
+
+.container_nba_x_fiba{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+}
+/*Footer*/
