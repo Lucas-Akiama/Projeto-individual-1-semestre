@@ -22,10 +22,10 @@
                     <a href="./index.html">Home page</a>
                 </li>
                 <li>|</li>
-                <li class="agora">
+                <li>
                     <a href="./cadastro.html">Cadastro</a>
                 </li>
-                <li>
+                <li class="agora">
                     <a href="./login.html">Login</a>
                 </li>
             </ul>
@@ -242,46 +242,6 @@
                     <input type="text" id="input_usuario" placeholder="Usuario">
                     <span class="validacao" id="span_validacao_usuario"></span>
                 </div>
-                <div class="campo">
-                    <span class="span_titulo">Email:</span>
-                    <input type="text" id="input_email" placeholder="usuario@email.com">
-                    <span class="validacao" id="span_validacao_email"></span>
-                </div>
-                <div class="campo">
-                    <span class="span_titulo">Time Favorito:</span>
-                    <select name="" id="combo_times" class="combo_nba_times">
-                        <option value="Atlanta Hawks">Atlanta Hawks</option>
-                        <option value="Boston Celtics">Boston Celtics</option>
-                        <option value="3">Brooklyn Nets</option>
-                        <option value="Brooklyn Nets">Charlotte Hornets</option>
-                        <option value="Chicago Bulls">Chicago Bulls</option>
-                        <option value="Cleveland Cavaliers">Cleveland Cavaliers</option>
-                        <option value="Dallas Mavericks">Dallas Mavericks</option>
-                        <option value="Denver Nuggets">Denver Nuggets</option>
-                        <option value="Detroit Pistons">Detroit Pistons</option>
-                        <option value="Golden State Warriors">Golden State Warriors</option>
-                        <option value="Houston Rockets">Houston Rockets</option>
-                        <option value="Indiana Pacers">Indiana Pacers</option>
-                        <option value="LA Clippers">LA Clippers</option>
-                        <option value="Los Angeles Lakers">Los Angeles Lakers</option>
-                        <option value="Memphis Grizzlies">Memphis Grizzlies</option>
-                        <option value="Miami Heat">Miami Heat</option>
-                        <option value="Milwaukee Bucks">Milwaukee Bucks</option>
-                        <option value="Minnesota Timberwolves">Minnesota Timberwolves</option>
-                        <option value="New Orleans Pelicans">New Orleans Pelicans</option>
-                        <option value="New York Knicks">New York Knicks</option>
-                        <option value="Oklahoma City Thunder">Oklahoma City Thunder</option>
-                        <option value="Orlando Magic">Orlando Magic</option>
-                        <option value="Philadelphia 76ers">Philadelphia 76ers</option>
-                        <option value="Phoenix Suns">Phoenix Suns</option>
-                        <option value="Portland Trail Blazers">Portland Trail Blazers</option>
-                        <option value="Sacramento Kings">Sacramento Kings</option>
-                        <option value="San Antonio Spurs">San Antonio Spurs</option>
-                        <option value="Toronto Raptors">Toronto Raptors</option>
-                        <option value="Utah Jazz">Utah Jazz</option>
-                        <option value="Washington Wizards">Washington Wizards</option>
-                    </select>
-                </div>
                 <div class="organizar-senhas">
                     <div class="senha">
                         <div class="campo">
@@ -290,15 +250,8 @@
                             <span class="validacao" id="span_validacao_senha"></span>
                         </div>
                     </div>
-                    <div class="senha">
-                        <div class="campo">
-                            <span class="span_titulo">Confirme a senha:</span>
-                            <input type="password" id="input_confirmacao_senha" placeholder="••••••">
-                            <span class="validacao" id="span_validacao_confirme_senha"></span>
-                        </div>
-                    </div>
                 </div>
-                <button class="botao-cadastro" onclick="cadastro()">Cadastrar-se</button>
+                <button class="botao-cadastro" onclick="login()">Login</button>
             </div>
         </div>
 
@@ -336,7 +289,6 @@
 
 </html>
 
-
 <!--script para o carrossel-->
 <script>
     var contador_imagem = 1;
@@ -355,72 +307,5 @@
         document.getElementById("radio" + contador_imagem).checked = true
 
     }
-
-</script>
-
-<!--script das validações-->
-<script>
-    
-
-    function cadastro() {
-        var usuario = input_usuario.value;
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirmacao_senha = input_confirmacao_senha.value;
-        
-        var usuario_ok = false;
-        var email_ok = false;
-        var senha_ok = false;
-        var confirmacao_senha_ok = false;
-        
-        
-        //validação usuario
-        if(usuario.length < 3){
-            span_validacao_usuario.innerHTML = `Nome de usuário muito curto`
-        }else {
-            span_validacao_usuario.innerHTML = ``
-            usuario_ok = true;
-        }
-
-        //validação email
-        if (email.indexOf("@gmail") > -1){
-            span_validacao_email.innerHTML = ``
-            email_ok = true;
-        }else if( email.indexOf("@hotmail") > -1 ){
-            span_validacao_email.innerHTML = ``
-            email_ok = true
-        }else if( email.indexOf("@sptech.school") > -1 ){
-            span_validacao_email.innerHTML = ``
-            email_ok = true;
-        }else{
-            span_validacao_email.innerHTML = `Só são aceitos os dominios: gmail / hotmail / sptech.school`
-        }
-        
-        //validação senha
-
-        if(senha.length < 6){
-            span_validacao_senha.innerHTML = `Senha precisa ter pelo menos 6 caracteres`
-        }else {
-            span_validacao_senha.innerHTML = ``
-            senha_ok = true;
-        }
-        //confirmação da senha
-
-        if(senha != confirmacao_senha){
-            span_validacao_confirme_senha.innerHTML = `As senhas precisam ser iguais`
-        }else{
-            span_validacao_confirme_senha.innerHTML = ""
-            confirmacao_senha_ok = true
-        }
-
-        //mandando pro banco o novo cadastro
-        if(usuario_ok && email_ok && senha_ok && confirmacao_senha_ok){
-            
-        }
-
-    }
-
-
-
 
 </script>
