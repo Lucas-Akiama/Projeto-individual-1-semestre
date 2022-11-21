@@ -13,8 +13,9 @@
 
 /*Header*/
 .header{
-    background-color: rgba(37, 37, 255, 0.822);
-    border-bottom: 4px solid rgba(255, 55, 55, 0.877);
+    background-color: rgb(31, 31, 31);
+    border-bottom: 4px solid rgba(71, 25, 196, 0.877);
+    
 }
 .container {
     width: 90%;
@@ -49,7 +50,7 @@
   }
 
 .navegacao_header{
-    width: 300px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,9 +63,13 @@
     color: white;
 }
 
-
-
-
+.lista_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 7vw;
+}
 
 
 /*Footer*/

@@ -1,0 +1,327 @@
+/*Header*/
+.header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/*Main(Banners)*/
+
+.titulo-banner {
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.conteudo-banner {
+    width: 54%;
+    font-size: 20px;
+    margin: 3%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.589);
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-atlanta {
+    background-image: url(../assets/banners-teams/banner-Atlanta.jpg);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-top: 7%;
+}
+
+.banner-boston{
+    background-image: url(../assets/banners-teams/banner-boston.jpg);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 105, 0);
+}
+
+.banner-nets{
+    background-image: url(../assets/banners-teams/banner-nets.png);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.banner-charlotte{
+    background-image: url(../assets/banners-teams/banner-charlotte.jpg);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 156, 204);
+}
+
+.banner-chicago{
+    background-image: url(../assets/banners-teams/banner-bulls.png);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(180, 0, 0);
+}
+
+.banner-cavaliers{
+    background-image: url(../assets/banners-teams/banner-cavaliers.png);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(105, 0, 0);
+}
+
+.banner-dallas{
+    background-image: url(../assets/banners-teams/banner-dallas.png);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(22, 49, 138);
+}
+
+.banner-denver{
+    background-image: url(../assets/banners-teams/banner-denver.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 2, 37);
+}
+
+.banner-detroit{
+    background-image: url(../assets/banners-teams/banner-detroit.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(145, 20, 20);
+}
+
+.banner-warriors{
+    background-image: url(../assets/banners-teams/banner-warriors.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 5, 102);
+}
+
+.banner-houston{
+    background-image: url(../assets/banners-teams/banner-houston.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.banner-pacers{
+    background-image: url(../assets/banners-teams/banner-pacers.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(196, 167, 41);
+}
+
+.banner-clippers{
+    background-image: url(../assets/banners-teams/banner-clippers.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(216, 216, 216);
+}
+
+.banner-lakers{
+    background-image: url(../assets/banners-teams/banner-lakers.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(141, 0, 223);
+}
+
+.banner-memphis{
+    background-image: url(../assets/banners-teams/banner-memphis.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(70, 111, 199);
+}
+
+.banner-miami{
+    background-image: url(../assets/banners-teams/banner-miami.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(94, 0, 0);
+}
+
+.banner-bucks{
+    background-image: url(../assets/banners-teams/banner-bucks.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(9, 65, 4);
+}
+
+.banner-minnesota{
+    background-image: url(../assets/banners-teams/banner-minnesota.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 6, 94);
+}
+
+.banner-pelicans{
+    background-image: url(../assets/banners-teams/banner-pelicans.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(0, 17, 114);
+}
+
+.banner-knicks{
+    background-image: url(../assets/banners-teams/banner-knicks.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(255, 123, 0);
+}
+
+.banner-oklahoma{
+    background-image: url(../assets/banners-teams/banner-oklahoma.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(0, 137, 155);
+}
+
+.banner-orlando{
+    background-image: url(../assets/banners-teams/banner-orlando.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(0, 38, 255);
+}
+
+.banner-76{
+    background-image: url(../assets/banners-teams/banner-76.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(212, 212, 212);
+}
+
+.banner-suns{
+    background-image: url(../assets/banners-teams/banner-suns.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(255, 145, 0);
+}
+
+.banner-portland{
+    background-image: url(../assets/banners-teams/banner-portland.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(114, 1, 1);
+}
+
+.banner-sacramento{
+    background-image: url(../assets/banners-teams/banner-sacramento.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(63, 0, 146);
+}
+
+.banner-spurs{
+    background-image: url(../assets/banners-teams/banner-spurs.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.banner-toronto{
+    background-image: url(../assets/banners-teams/banner-toronto.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(110, 0, 0);
+}
+
+.banner-jazz{
+    background-image: url(../assets/banners-teams/banner-jazz.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(2, 11, 63);
+}
+
+.banner-wizards{
+    background-image: url(../assets/banners-teams/banner-wizards.);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(7, 0, 110);
+}
+

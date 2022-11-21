@@ -1,11 +1,18 @@
-
+.header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 /*Main*/
 /*historia*/
+
 .banner1{
     background-image: url("../assets/nbaCourt.jpg");
     background-size: cover;
     background-position: center center;
     height: 70vh;
+    padding-top: 90px;
 }
 
 .titulo_banner{
