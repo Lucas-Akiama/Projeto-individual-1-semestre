@@ -238,8 +238,8 @@
             <div class="card-cadastro">
                 <h1>Cadastro</h1>
                 <div class="campo">
-                    <span class="span_titulo">Usuário:</span>
-                    <input type="text" id="input_usuario" placeholder="Usuario">
+                    <span class="span_titulo">Email:</span>
+                    <input type="text" id="input_email" placeholder="xxxx@xxx.xx">
                     <span class="validacao" id="span_validacao_usuario"></span>
                 </div>
                 <div class="organizar-senhas">
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="botao-cadastro" onclick="login()">Login</button>
+                <button class="botao-cadastro" onclick="entrar()">Login</button>
             </div>
         </div>
 
@@ -306,6 +306,77 @@
 
         document.getElementById("radio" + contador_imagem).checked = true
 
+    }
+</script>
+
+<script>
+function entrar() {
+       // aguardar();
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./franchises.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 
 </script>
