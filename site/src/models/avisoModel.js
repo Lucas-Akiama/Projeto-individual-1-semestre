@@ -3,7 +3,7 @@ var database = require("../database/config");
 function count_times() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    select r.fkCampeaoNba ,count(fkCampeaoNba), t.nome from rankPessoal r join times t on fkCampeaoNba = idTimes group by fkCampeaoNba;
+    select r.fkCampeaoNba ,count(fkCampeaoNba) as "fkcount", t.nome from rankPessoal r join times t on fkCampeaoNba = idTimes group by fkCampeaoNba;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -12,7 +12,7 @@ function count_times() {
 function times_da_galera() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    select t.nome, count(fkTime) as times_fav from usuario u join times t on u.fkTime = t.idTimes group by fktime order by times_fav desc;
+    select t.nome, count(fkTime) as "times_fav" from usuario u join times t on u.fkTime = t.idTimes group by fktime order by times_fav desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

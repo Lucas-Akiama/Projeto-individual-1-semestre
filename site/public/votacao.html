@@ -171,8 +171,8 @@
 
 
     function count_times() {
-        
-        
+
+
         fetch("/avisos/count_times").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -184,25 +184,46 @@
 
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    var palpites = resposta;
 
-                   
+                    var resposta = JSON.parse(JSON.stringify(resposta));
+                    console.log(resposta)
+                    var vencedor_nba = Number(select_winner_nba.value);
+                    var soma_palpites = 0;
+                    var qtd_palpites_iguais = 0;
 
-                    
+                    for (i = 0; i < resposta.length; i++) {
+
+                        soma_palpites += resposta[i].fkcount
+
+                        if (vencedor_nba == resposta[i].fkCampeaoNba) {
+                            qtd_palpites_iguais += resposta[i].fkcount
+
+                        }
+
+                    }
+                    console.log(soma_palpites)
+                    console.log(qtd_palpites_iguais)
+
+                    const porcetagem_palpites = (qtd_palpites_iguais / soma_palpites) * 100;
+                    console.log(porcetagem_palpites)
+                    div_palpites.innerHTML = `${porcetagem_palpites.toFixed(2)} % dos palpites para campeão da Nba foram iguais ao seu`
+
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            
+
         });
     }
-    
 
-    function times_da_galera(){
-         //aguardar();
-         fetch("/avisos/times_da_galera").then(function (resposta) {
+
+
+    // times da galera
+    window.onload = function times_da_galera() {
+        //aguardar();
+        fetch("/avisos/times_da_galera").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     throw "Nenhum resultado encontrado!!";
@@ -215,18 +236,18 @@
                         var publicacao = resposta[i];
 
                         // criando e manipulando elementos do HTML via JavaScript
-                        div_times_fav.innerHTML +=`${i + 1}° - ${publicacao}`
-                        
+                        div_times_fav.innerHTML += `${i + 1}° - ${publicacao.nome}  com ${publicacao.times_fav} users linkados<br>`
+
                     }
 
-                    
+
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            
+
         });
 
     }

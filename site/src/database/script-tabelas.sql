@@ -33,7 +33,7 @@ fkCampeaoLeste int, foreign key(fkCampeaoLeste) references times(idTimes),
 PRIMARY KEY(idRank, fkUsuario)
 );
 
-INSERT INTO TIMES VALUES
+INSERT INTO times VALUES
 (null, "Atlanta Hawks", 1),
 (null, "Boston Celtics", 17),
 (null, "Brooklyn Netss", 0),

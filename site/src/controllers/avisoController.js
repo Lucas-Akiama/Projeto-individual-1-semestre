@@ -28,7 +28,7 @@ function times_da_galera(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar os times_da_galera: ", erro.sqlMessage);
+        console.log("Houve um erro ao buscar os times da galera: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
