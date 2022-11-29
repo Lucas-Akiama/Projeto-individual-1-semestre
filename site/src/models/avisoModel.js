@@ -1,20 +1,18 @@
 var database = require("../database/config");
 
-function listar() {
+function count_times() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-        SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            u.id AS idUsuario,
-            u.nome,
-            u.email,
-            u.senha
-        FROM aviso a
-            INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
+    select r.fkCampeaoNba ,count(fkCampeaoNba), t.nome from rankPessoal r join times t on fkCampeaoNba = idTimes group by fkCampeaoNba;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function times_da_galera() {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    select t.nome, count(fkTime) as times_fav from usuario u join times t on u.fkTime = t.idTimes group by fktime order by times_fav desc;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -90,8 +88,9 @@ function deletar(idAviso) {
 }
 
 module.exports = {
-    listar,
+    count_times,
     listarPorUsuario,
+    times_da_galera,
     pesquisarDescricao,
     publicar,
     editar,

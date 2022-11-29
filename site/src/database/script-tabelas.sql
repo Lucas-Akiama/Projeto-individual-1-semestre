@@ -6,30 +6,31 @@
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
 
-CREATE DATABASE nba;
+CREATE DATABASE IF NOT EXISTS nba;
 USE nba;
 
-CREATE TABLE usuario(
-idCadastro INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS times(
+idTimes INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45),
+qtdTitulos INT(45)
+);
+
+CREATE TABLE IF NOT EXISTS usuario(
+idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45),
 email VARCHAR(45),
 senha VARCHAR(45),
 fkTime INT, FOREIGN KEY (fkTime) REFERENCES times(idTimes)
 );
 
-CREATE TABLE times(
-idTimes INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45),
-qtdTitulos INT(45)
-);
 
-CREATE TABLE rankPessoal(
+CREATE TABLE IF NOT EXISTS rankPessoal(
 idRank INT AUTO_INCREMENT,
-fkCadastro INT, foreign key(fkCadastro) references cadastro(idCadastro),
+fkUsuario INT, foreign key(fkUsuario) references usuario(idUsuario),
 fkCampeaoNba int, foreign key(fkCampeaoNba) references times(idTimes),
 fkCampeaoOeste int, foreign key(fkCampeaoOeste) references times(idTimes),
 fkCampeaoLeste int, foreign key(fkCampeaoLeste) references times(idTimes),
-PRIMARY KEY(idRank, fkCadastro)
+PRIMARY KEY(idRank, fkUsuario)
 );
 
 INSERT INTO TIMES VALUES

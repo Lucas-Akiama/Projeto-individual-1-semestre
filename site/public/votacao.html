@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,23 @@
     <link rel="stylesheet" href="./css/votacao.css">
     <title>Votações</title>
 </head>
+
 <body>
-     <!--Header-->
-     <div class="header">
+    <!--Header-->
+    <div class="header">
         <div class="container">
             <div class="logo_titulo">
                 <img class="logo_nba" src="./assets/logonba.png" alt="Logo NBA">
                 <h1 class="titulo_header">NBA Br</h1>
             </div>
             <ul class="navegacao_header">
-                <li ><a href="./franchises.html">Franchises</a></li>
+                <li><a href="./franchises.html">Franchises</a></li>
                 <li class="agora"><a href="./votacao.html">Votações</a></li>
                 <li>|</li>
                 <!--Select user-->
                 <li class="lista_header">
                     <img src="./assets/perfil-de-usuario.png" alt="">
-                    Limenss
+                    <span id="user_name"></span>
                 </li>
                 <li>
                     <a href="./cadastro.html"><img src="./assets/logout.png" alt="Sair"></a>
@@ -120,25 +122,113 @@
         </div>
     </main>
 </body>
+
 </html>
 
 <script>
-    //cadastrar palpite
-    
+    user_name.innerHTML = sessionStorage.NOME_USUARIO;
 
-    function cadastrar_palpite(){
+    //cadastrar palpite
+
+
+    function cadastrar_palpite() {
         var vencedor_leste = select_winner_east.value;
         var vencedor_oeste = select_winner_west.value;
         var vencedor_nba = select_winner_nba.value;
-        
+
         //dar o insert no banco da dados
-        div_palpites.innerHTML += `${vencedor_leste} ${vencedor_oeste} ${vencedor_nba} <br>`
+        fetch("/usuarios/cadastrar_palpite", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                vencedor_leste: vencedor_leste,
+                vencedor_oeste: vencedor_oeste,
+                vencedor_nba: vencedor_nba,
+                id: sessionStorage.ID_USUARIO,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                count_times()
+                div_palpites.innerHTML = ""
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            //    finalizarAguardar();
+        });
+
+        return false;
+    }
+
+
+    function count_times() {
         
-    }
+        
+        fetch("/avisos/count_times").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
 
-    //fazer os selects para mostrar os times
-    function mostrar_times(){
-    }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var palpites = resposta;
 
+                   
+
+                    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            
+        });
+    }
+    
+
+    function times_da_galera(){
+         //aguardar();
+         fetch("/avisos/times_da_galera").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        div_times_fav.innerHTML +=`${i + 1}° - ${publicacao}`
+                        
+                    }
+
+                    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            
+        });
+
+    }
 
 </script>

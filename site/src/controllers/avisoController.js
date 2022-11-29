@@ -5,8 +5,8 @@ function testar(req, res) {
     res.send("ENTRAMOS NO AVISO CONTROLLER");
 }
 
-function listar(req, res) {
-    avisoModel.listar().then(function (resultado) {
+function count_times(req, res) {
+    avisoModel.count_times().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -15,6 +15,20 @@ function listar(req, res) {
     }).catch(function (erro) {
         console.log(erro);
         console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function times_da_galera(req, res) {
+    avisoModel.times_da_galera().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os times_da_galera: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -133,7 +147,8 @@ function deletar(req, res) {
 
 module.exports = {
     testar,
-    listar,
+    count_times,
+    times_da_galera,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,

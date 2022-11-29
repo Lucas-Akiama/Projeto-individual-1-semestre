@@ -94,9 +94,47 @@ function cadastrar(req, res) {
     }
 }
 
+// função cadastrar palpite
+function cadastrar_palpite (req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var vencedor_leste = req.body.vencedor_leste;
+    var vencedor_oeste = req.body.vencedor_oeste;
+    var vencedor_nba = req.body.vencedor_nba;
+    var id = req.body.id;
+    // Faça as validações dos valores
+    if (vencedor_leste == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (vencedor_oeste == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (vencedor_nba == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrar_palpite(id, vencedor_leste, vencedor_oeste, vencedor_nba)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    cadastrar_palpite,
 }

@@ -7,8 +7,12 @@ router.get("/", function (req, res) {
     avisoController.testar(req, res);
 });
 
-router.get("/listar", function (req, res) {
-    avisoController.listar(req, res);
+router.get("/count_times", function (req, res) {
+    avisoController.count_times(req, res);
+});
+
+router.get("/times_da_galera", function (req, res) {
+    avisoController.times_da_galera(req, res);
 });
 
 router.get("/listar/:idUsuario", function (req, res) {

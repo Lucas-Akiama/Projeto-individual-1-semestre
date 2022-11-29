@@ -25,7 +25,7 @@
                 <!--Select user-->
                 <li class="lista_header">
                     <img src="./assets/perfil-de-usuario.png" alt="">
-                    Limenss
+                    <span id="user_name"></span>
                 </li>
                 <li>
                     <a href="./cadastro.html"><img src="./assets/logout.png" alt="Sair"></a>
@@ -288,3 +288,9 @@
 </body>
 
 </html>
+
+<script>
+    user_name.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+</script>

@@ -424,12 +424,6 @@
             confirmacao_senha_ok = true
             cadastrar()
         }
-
-        //mandando pro banco o novo cadastro
-        if(usuario_ok && email_ok && senha_ok && confirmacao_senha_ok){
-            
-        }
-
     }
 
 
@@ -484,7 +478,7 @@
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "./login.html";
                 }, "2000")
                 
                 limparFormulario();
