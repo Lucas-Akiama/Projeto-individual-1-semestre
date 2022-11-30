@@ -206,7 +206,7 @@
 
                     const porcetagem_palpites = (qtd_palpites_iguais / soma_palpites) * 100;
                     console.log(porcetagem_palpites)
-                    div_palpites.innerHTML = `${porcetagem_palpites.toFixed(2)} % dos palpites para campeão da Nba foram iguais ao seu`
+                    div_palpites.innerHTML = `<br> ${porcetagem_palpites.toFixed(2)} % dos palpites para campeão da Nba foram iguais ao seu`
 
                 });
             } else {
@@ -236,7 +236,7 @@
                         var publicacao = resposta[i];
 
                         // criando e manipulando elementos do HTML via JavaScript
-                        div_times_fav.innerHTML += `${i + 1}° - ${publicacao.nome}  com ${publicacao.times_fav} users linkados<br>`
+                        div_times_fav.innerHTML += `<br>${i + 1}° - ${publicacao.nome}  com ${publicacao.times_fav} users linkados<br>`
 
                     }
 

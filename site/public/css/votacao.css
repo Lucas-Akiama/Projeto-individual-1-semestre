@@ -75,3 +75,11 @@
     box-shadow: 0px 10px 40px rgba(93, 59, 243, 0.911);
     color: aliceblue;
 }
+
+#div_palpites{
+    font-size: 20px;
+}
+
+#div_times_fav{
+    font-size: 20px;
+}
