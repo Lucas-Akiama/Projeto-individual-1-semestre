@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS usuario(
 idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45),
 email VARCHAR(45),
-senha VARCHAR(45),
+senha VARCHAR(100),
 fkTime INT, FOREIGN KEY (fkTime) REFERENCES times(idTimes)
 );
 
